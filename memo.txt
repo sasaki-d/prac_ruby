@@ -1,0 +1,33 @@
+## attr_accessor
+アクセサメソッド
+
+## respond_to?
+http://ref.xaio.jp/ruby/classes/object/respond_to
+
+respond_to?メソッドは、レシーバのオブジェクトに対してメソッドを呼び出せるかどうかを調べます。引数nameにはメソッド名をシンボルか文字列で指定します。メソッドnameを持っていればtrue、なければfalseが返ります。
+
+```
+class Cat
+  def hello
+    "meow!"
+  end
+  
+  private
+  def sleep
+    "zzz..."
+  end
+end
+ 
+cat = Cat.new
+p cat.respond_to?(:object_id)
+p cat.respond_to?(:hello)
+p cat.respond_to?(:sleep)
+p cat.respond_to?(:sleep, true)
+
+#true
+#true
+#false
+#true
+```
+
+## attr_reader
